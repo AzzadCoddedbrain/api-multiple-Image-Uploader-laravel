@@ -19,6 +19,8 @@ class UploadImageController extends Controller
         //     return response()->json('image null');
         // }
 
+//Multiple Images & Videos in array[] 
+
         $images = $request->file('image');
         $imageName = "";
 
