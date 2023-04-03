@@ -32,3 +32,4 @@ class UploadImageController extends Controller
         return response()->json($imagedb);
     }
 }
+
