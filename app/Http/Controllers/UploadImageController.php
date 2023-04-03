@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UploadImageController extends Controller
 {
-    function upload(Request $request){
+    function multipleImageUpload(Request $request){
         // $image = $request->file('image');
         
         // if($request->hasFile('image')){
