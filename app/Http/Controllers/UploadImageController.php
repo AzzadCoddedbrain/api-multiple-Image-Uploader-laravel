@@ -60,7 +60,8 @@ class UploadImageController extends Controller
         return DB::table('medias')
         ->join('post_metas','medias.user_id',"=",'post_metas.post_id')
         // ->select('post_metas.*')
-        ->where('post_metas.post_id',"annu")
+        ->select('post_metas.post_id')
+        // ->where('post_metas.post_id')
         ->get();
 
     }
