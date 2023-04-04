@@ -23,3 +23,5 @@ use App\Http\Controllers\PostMetaController;
 Route::post("image/upload",[UploadImageController::class,'multipleImageUpload']);
 
 Route::post("media",[PostMetaController::class,'addmedia']);
+
+Route::post("attachment",[UploadImageController::class,'show']);

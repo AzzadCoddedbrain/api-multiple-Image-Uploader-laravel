@@ -21,8 +21,6 @@ class PostMetaController extends Controller
         else{
             return response()-> json("erro code ka hai");
         }
-        // $post = new postMetaModel();
-        // $post->save();
     }
 
    
