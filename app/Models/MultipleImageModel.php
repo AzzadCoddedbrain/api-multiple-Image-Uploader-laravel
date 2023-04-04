@@ -9,7 +9,7 @@ class MultipleImageModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'multiple_images';
+    protected $table = 'medias';
 
     protected $fillable = [
         'user_id',

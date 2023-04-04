@@ -11,7 +11,7 @@ class UploadImageController extends Controller
     function multipleImageUpload(Request $request){
 
         $images = $request->file('image');
-        $imageName = "";
+        $imageName= "";
 
         foreach($images as $image){
             $new_name = rand().".".$image->getClientOriginalExtension();
@@ -28,12 +28,12 @@ class UploadImageController extends Controller
             "activities"=>"usr",
             "location"=>"usr",
             "tagged_users"=>"usr",
-            "media"=>strtolower($imagedb)
+            "media"=> $imagedb
         ]);
 
 
 
-        return response()->json(["image"=>$imagedb,"data"=> $post]);
+        return response()->json(["image"=>$imagedb,"data"=> $post ]);
     }
 }
 
