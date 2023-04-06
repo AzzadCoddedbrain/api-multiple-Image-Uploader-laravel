@@ -10,60 +10,60 @@ use App\Models\postMetaModel;
 
 class UploadImageController extends Controller
 {
-    // public function multipleImageUpload(Request $request){
+    public function multipleImageUpload(Request $request){
 
-    //     $images = $request->file('image');
-    //     $imageName= "";
+        $images = $request->file('image');
+        $imageName= "";
 
-    //     foreach($images as $image){
-    //         $new_name = rand().".".$image->getClientOriginalExtension();
-    //         $image->move(public_path('/upload/images'),$new_name);
+        foreach($images as $image){
+            $new_name = rand().".".$image->getClientOriginalExtension();
+            $image->move(public_path('/upload/images'),$new_name);
             
-    //         $imageName = $imageName.$new_name.",";
-    //         if($image){
+            $imageName = $imageName.$new_name.",";
+            if($image){
 
-    //         }
+            }
        
-    //         $post = postMetaModel::create([
-    //             "post_id"=>"annu1",
-    //             "key"=> "image",
-    //             "value"=>$new_name
-    //         ]);
+            $post = postMetaModel::create([
+                "post_id"=>"annu1",
+                "key"=> "image",
+                "value"=>$new_name
+            ]);
     
        
        
-    //     }
-    //     $imagedb = $imageName;
+        }
+        $imagedb = $imageName;
 
 
        
 
 
-    //     $post = MultipleImageModel::create([
-    //         "user_id"=>"usr",
-    //         "description"=>"usr",
-    //         "activities"=>"usr",
-    //         "location"=>"usr",
-    //         "tagged_users"=>"usr",
-    //         "media"=> $imagedb
-    //     ]);
+        $post = MultipleImageModel::create([
+            "user_id"=>"usr",
+            "description"=>"usr",
+            "activities"=>"usr",
+            "location"=>"usr",
+            "tagged_users"=>"usr",
+            "media"=> $imagedb
+        ]);
 
 
 
-    //     return response()->json(["image"=>$imagedb,"data"=> $post ]);
-    // }
+        return response()->json(["image"=>$imagedb,"data"=> $post ]);
+    }
 
 
-    public function show(){
+    // public function show(){
         
 
-        return DB::table('medias')
-        ->join('post_metas','medias.user_id',"=",'post_metas.post_id')
-        // ->select('post_metas.*')
-        ->select('post_metas.post_id')
-        // ->where('post_metas.post_id')
-        ->get();
+    //     return DB::table('medias')
+    //     ->join('post_metas','medias.user_id',"=",'post_metas.post_id')
+    //     // ->select('post_metas.*')
+    //     ->select('post_metas.post_id')
+    //     // ->where('post_metas.post_id')
+    //     ->get();
 
-    }
+    // }
 
 }
